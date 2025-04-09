@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import axios from "axios";
 
 const Signup = () => {
   const [formData, setFormData] = useState({ name: '', email: '', password: '' })
@@ -11,6 +12,9 @@ const Signup = () => {
     e.preventDefault()
     console.log('Form submitted:', formData)
     // Later: send this to your backend
+    axios.post('http://localhost:8000/api/auth/signup', formData)
+    .then((res) => console.log(res))
+    .catch((err) => console.log(err))
   }
 
   return (
