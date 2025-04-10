@@ -4,7 +4,7 @@ import validEmail from '../regex/EmailRegex';
 import validPassword from '../regex/PasswordRegex';
 
 const Signup = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', password: '' })
+  const [formData, setFormData] = useState({ name: '', username: '', email: '', password: '' })
   const [errEmail, setErrEmail] = useState(false);
   const [errPassword, setErrPassword] = useState(false);
 
@@ -72,6 +72,15 @@ const Signup = () => {
           required
         />
         <input
+          type="text"
+          name="username"
+          placeholder="Username"
+          value={formData.username}
+          onChange={handleChange}
+          className="w-full p-2 mb-4 border border-gray-300 rounded"
+          required
+        />
+        <input
           type="email"
           name="email"
           placeholder="Email Address"
@@ -92,7 +101,7 @@ const Signup = () => {
         />
         <button
           type="submit"
-          className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition"
+          className="w-full bg-blue-600 text-blue-900 py-2 rounded hover:bg-blue-700 transition"
         >
           Sign Up
         </button>
