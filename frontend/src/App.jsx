@@ -8,6 +8,7 @@ import ProductCard from './components/ProductCard';
 import { Route, Routes } from 'react-router-dom';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import AddProduct from './pages/vendor-pages/AddProduct';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
     <Routes>
       <Route path='/login' element={<Login />}/>
       <Route path='/signup' element={<Signup />}/>
+      <Route path='/vendor/add-product' element={<AddProduct />}/>
     </Routes>
     {/* <Products /> */}
     </>
