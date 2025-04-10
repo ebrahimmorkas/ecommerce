@@ -1,14 +1,22 @@
-import { useState } from 'react'
+import { useState } from 'react';
+import axios from 'axios';
 
 const Login = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', password: '' })
+  const [formData, setFormData] = useState({ email: '', password: '' })
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
+
+    console.log(formData);
+
+    axios.post('http://localhost:8000/api/auth/login', formData)
+    .then((res) => console.log(res))
+    .catch((err) => console.log(err));
+
     console.log('Form submitted:', formData)
     // Later: send this to your backend
   }

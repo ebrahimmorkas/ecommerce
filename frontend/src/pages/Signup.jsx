@@ -39,6 +39,7 @@ const Signup = () => {
       return;
     }
  
+    // Checking whether email passed the regex test or not
     if(!validEmail.test(formData.email)) {
       console.log("Email not validated")
       setErrEmail(true);
@@ -47,8 +48,6 @@ const Signup = () => {
     else{
       setErrEmail(false);
     }
-  }
-    
 
 
 
