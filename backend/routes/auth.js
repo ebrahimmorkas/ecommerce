@@ -19,4 +19,15 @@ router.post('/signup', async (req, res) => {
     console.log("Finished request");
 }); 
 
+router.post('/login', async (req, res) => {
+    try {
+
+        console.log("Login request");
+        console.log(req.body);
+    }
+    catch(err) {
+        console.log(err);
+    }
+})
+
 module.exports = router;
